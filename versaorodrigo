@@ -1,0 +1,66 @@
+//MAIN:
+
+using System;
+using lista03;
+
+class Program {
+  public static void Main (string[] args) {
+    Galinha g = new Galinha("Milho");
+    g.Comer();
+
+    Aguia a = new Aguia("Carne");
+    a.Comer();
+  }
+}
+
+//AVE:
+
+namespace lista03
+{
+  public abstract class Ave
+  {
+    protected string _alimento;
+  
+    public Ave(string alimento)
+    {
+      _alimento = alimento;
+    }
+  
+    public abstract void Comer();
+  }
+}
+
+
+//GALINHA:
+
+using System;
+
+namespace lista03
+{
+  public class Galinha : Ave
+  {
+    public Galinha(string alimento) : base(alimento) { }
+  
+    public override void Comer() {
+      Console.WriteLine($"Comendo {_alimento}...");
+    }
+  }
+}
+
+
+//AGUIA:
+
+using System;
+
+namespace lista03
+{
+  public class Aguia : Ave
+  {
+    public Aguia(string alimento) : base(alimento) { }
+
+    public override void Comer()
+    {
+      Console.WriteLine($"Comendo {_alimento}");
+    }
+  }
+}
